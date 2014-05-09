@@ -5,7 +5,7 @@ public class Intentos {
 	public static void main(String[] args) {
 		int njuegos = 2;
 		String marinwins, jonawins;
-		String comprobar, asegurar,nohackear = "";
+		String comprobar, asegurar = "";
 		int marintotal, jonatotal;
 
 		while (njuegos != 0) {
@@ -16,7 +16,10 @@ public class Intentos {
 				String ajustar = resultados.replace(" ", "");
 				comprobar = ajustar.replace("1", "");
 				asegurar = ajustar.replace("0", "");
-				
+				// Verificar que solo sean numeros
+				if (!ajustar.replaceAll(" ", "").matches("([0-9]*)")) {
+					JOptionPane.showMessageDialog(null, "INGRESE SOLO NUMEROS");
+				}
 				if (njuegos == ajustar.length()) {
 					if (comprobar.length() != 0 || asegurar.length() != 0) {
 						marinwins = ajustar.replace("0", "");
@@ -27,6 +30,7 @@ public class Intentos {
 						System.out.println("mary won " + marintotal
 								+ " times and, john won " + jonatotal
 								+ " times");
+						njuegos=0;
 					}
 				} else {
 					JOptionPane.showMessageDialog(null,"no ha ingresado la cantidad correcta de jugadas o ha ingresado un numero distinto a 0/1 HACES A MARIA LLORAR! D:<");
