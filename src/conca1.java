@@ -8,8 +8,7 @@ public class conca1 {
 				System.in));
 		boolean vuelta = true;
 		int numconj = 0;
-		int cont1=0;
-		int cont2=0;
+		
 		//Primero recibimos el numero de conjuntos
 		do {
 			vuelta = false;
